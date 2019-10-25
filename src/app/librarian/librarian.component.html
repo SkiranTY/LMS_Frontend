@@ -1,7 +1,6 @@
 <div class="container">
         <div class="col-md-4 offset-md-2 mt-5 card card-body bg-light">
             <div>
-                <!-- <img src="https://tse3.mm.bing.net/th?id=OIP.FIRYQC_Osujp1NXWcWHEJQAAAA&pid=Api&P=0&w=245&h=186" alt="" height="500px" width="500px"> -->
         <h3 style="color:burlywood">Librarian Login</h3>
         <form action="" #loginform='ngForm' (ngSubmit)='printform(loginform.value)'>
             <div class="form-group">
@@ -26,7 +25,7 @@
                 <div  class="alert alert-danger" *ngIf='password.errors.required'><small style="color: red;float: right;" >This field is required</small></div>
             </div>
             <div>
-                <button class="btn btn-group btn-outline-success float-right" type="submit" [disabled]='loginform.invalid'>Login</button>
+                <button class="btn btn-group btn-outline-success float-right" type="submit" [disabled]='loginform.invalid'  (click)='tohome(admin)'>Login</button>
             </div>
         </form> 
         </div>

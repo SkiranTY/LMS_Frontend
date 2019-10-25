@@ -1,0 +1,67 @@
+<div class="container">
+        <a Style="color: blue;float: right;" routerLink="" (click)='getAllusers(user)'>Get All users</a><br>
+    <div class="col-md-4 offset-md-3 card card-body bg-light">
+    <h3 style="color:chartreuse">User Registration Form</h3>
+    <form action="" #registerform='ngForm' (ngSubmit)='printformerg(registerform.value)'>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" #name='ngModel' ngModel required minlength="4" class="form-control" placeholder="enter ur name....">
+        </div>
+        <div *ngIf="name.touched && name.invalid">
+            <div class="alert alert-danger" *ngIf="name.errors.required"><small style="color:red;float: right;">Name must be compulsory</small></div>
+            <div class="alert alert-danger" *ngIf="name.errors.minlength"><small style="color:red;float: right;">Name requires atleast 4 chracters</small></div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" #email='ngModel' ngModel placeholder="enter ur mail id.." 
+            required class="form-control" minlength="10">
+        </div>
+        <div *ngIf='email.invalid && email.touched'>
+            <div class="alert alert-danger" *ngIf='email.errors.required'><small style="color:red;float: right;">This field is necessary to login</small></div>
+            <div class="alert alert-danger" *ngIf='email.errors.minlength'><small style="color:red;float: right;">This field is required min 10 characters</small></div>
+            <div class="alert alert-danger" *ngIf='email.errors.email'><small style="color:red;float: right;">This field accept only the email</small></div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" #password='ngModel' ngModel minlength="7" 
+            placeholder="enter ur password..." required>
+        </div>
+        <div *ngIf='password.touched && password.invalid'>
+            <div  class="alert alert-danger" *ngIf='password.errors.minlength'><small style="color: red;float: right;" >This field is required atleast 7 characters</small></div>
+            <div  class="alert alert-danger" *ngIf='password.errors.required'><small style="color: red;float: right;" >This field is required</small></div>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" name="age" #age='ngModel' ngModel  required class="form-control" placeholder="enter ur age...">
+        </div>
+        <div *ngIf="age.touched && age.invalid">
+            <div class="alert alert-danger" *ngIf="age.errors.required">Age is neccessary for admin registration</div>
+        </div>
+        <div class="form-group">
+            <label for="mobno">Mobile Number</label>
+            <input type="tel" name="mobno" #mobno='ngModel' ngModel required placeholder="Enter ur mob.no..." class="form-control" minlength="10">
+        </div>
+        <div *ngIf='mobno.invalid && mobno.touched'>
+            <div class="alert alert-danger" *ngIf='mobno.errors.required'>Mobile no is required</div>
+            <div class="alert alert-danger" *ngIf='mobno.errors.minlength'>Mobile no is atleast 10 numbers</div>
+        </div>
+        <label for="gender">Gender</label>
+        <div class="radio">
+        <label>  
+            <input type="radio" name="gender" value="Male" [checked]='true' ngModel>  
+            Male  
+        </label>  
+        </div>  
+        <div class="radio">  
+        <label>  
+            <input type="radio" name="gender" value="Female" ngModel>  
+            Female  
+        </label>  
+        </div>   
+        <div>
+            <button class="btn btn-group btn-outline-success float-right" type="submit" [disabled]='registerform.invalid'>Add User</button>
+        </div>
+    </form> 
+    </div>
+    </div>  
+

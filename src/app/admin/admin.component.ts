@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -8,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private http:HttpClientModule) { }
+  constructor(private http:HttpClientModule,private router:Router) { }
 
   printform(loginform){
     console.log(loginform.value);
@@ -17,6 +18,9 @@ export class AdminComponent implements OnInit {
   printformreg(registerform){
     console.log(registerform.value);
     registerform.reset();
+  }
+  toadminhome(adminhome){
+    this.router.navigateByUrl('/admin-home');
   }
 
   ngOnInit() {

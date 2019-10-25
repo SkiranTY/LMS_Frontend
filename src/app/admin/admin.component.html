@@ -24,7 +24,7 @@
         <div  class="alert alert-danger" *ngIf='password.errors.required'><small style="color: red;float: right;" >This field is required</small></div>
     </div>
     <div>
-        <button class="btn btn-group btn-outline-success float-right" type="submit" [disabled]='loginform.invalid'>Login</button>
+        <button class="btn btn-group btn-outline-success float-right" type="submit" [disabled]='loginform.invalid' (click)='toadminhome(adminhome)'>Login</button>
     </div>
 
     <!-- Button trigger modal -->

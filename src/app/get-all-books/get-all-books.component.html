@@ -1,0 +1,33 @@
+<div class="container">
+        <a style="color: blue;float: right;" routerLink="" (click)='searchbooks(books)'>Search Books</a>
+    <div class="col-md-6 offset-md-3 mt-5">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Book_ID</th>
+                    <th>Book_Name</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Update_Book</th>
+                    <th>Delete_Book</th>
+                </tr>
+            </thead>
+                <tbody>
+                    <tr *ngFor='let book of books;index as i'>
+                        <td>{{i+1}}</td>
+                        <td>{{book.bId}}</td>
+                        <td>{{book.bName}}</td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.category}}</td>
+                        <td>
+                            <button class="btn btn-outline-warning" type="submit">Update</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-danger" type="submit">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+</div>

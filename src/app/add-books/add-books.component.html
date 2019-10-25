@@ -1,0 +1,33 @@
+<div class="container">
+        <a Style="color: blue;float: right;" routerLink="" (click)='getallbooks(books)'>Get All Books</a><br>
+        <a style="color: blue;float: right;" routerLink="" (click)='searchbook(book)'>Search books</a><br>
+    <div class="col-md-5 offset-md-3 bg-light mt-5 card card-body">
+        <h1 style="color: darkslateblue;">Add Books</h1>
+        <form action="" #addbooks='ngForm' (ngSubmit)='addbooks(books)'>
+            <div class="form-group">
+                <input type="text" name="bName" #bName='ngModel' ngModel id="" class="form-control" required placeholder="enter book name...">
+            </div>
+            <div *ngIf="bName.touched && bName.invalid">
+                <div class="alert alert-danger" *ngIf="bName.errors.required"><small style="text-align: right">
+                        This  field is required</small></div>
+            </div>
+            <div class="form-group">
+                <input type="text" name="author" #author='ngModel' ngModel id="" class="form-control" required placeholder="enter Author...">
+            </div>
+            <div *ngIf="author.touched && author.invalid">
+                    <div class="alert alert-danger" *ngIf="author.errors.required"><small style="text-align: right">
+                            This  field is required</small></div>
+            </div>
+            <div class="form-group">
+                <input type="text" name="category" #category='ngModel' ngModel id="" class="form-control" required placeholder="enter category...">
+            </div>
+            <div *ngIf="category.touched && category.invalid">
+                <div class="alert alert-danger" *ngIf="category.errors.required" ><small style="text-align: right">
+                            This  field is required</small></div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-outline-warning float-right"  >Add</button>
+            </div>
+        </form>
+    </div>
+</div>

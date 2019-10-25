@@ -1,0 +1,32 @@
+
+    <div class="col-md-8 offset-md-2 mt-5">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>User_ID</th>
+                    <th>User_Name</th>
+                    <th>User Email</th>
+                    <th>User Mobile no</th>
+                    <th>Update_User</th>
+                    <th>Delete_User</th>
+                </tr>
+            </thead>
+                <tbody>
+                    <tr *ngFor='let user of users;index as i'>
+                        <td>{{i+1}}</td>
+                        <td>{{user.id}}</td>
+                        <td>{{user.name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.mobno}}</td>
+                        <td>
+                            <button class="btn btn-outline-warning" type="submit">Update</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-danger" type="submit">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+
